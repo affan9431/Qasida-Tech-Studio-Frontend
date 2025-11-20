@@ -3,12 +3,12 @@ function AboutHeroSection() {
     <section className="bg-[#EDEDED] py-20 md:py-28">
       <div className="container mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         <div>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight relative top-10">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight relative top-10 md:top-0">
             Who We Are
           </h1>
-          <div className="w-20 h-[3px] bg-black mt-3 mb-6 relative top-10"></div>
+          <div className="w-20 h-[3px] bg-black mt-3 mb-6 relative top-10 md:top-0"></div>
 
-          <p className="text-base md:text-lg leading-relaxed text-gray-700 md:w-[85%] relative top-10">
+          <p className="text-base md:text-lg leading-relaxed text-gray-700 md:w-[85%] relative top-10 md:top-0">
             We’re a small crew with big brains and bigger ambition — driven by
             curiosity, shaped by craft, and steady with consistency. No office
             politics, no overhyped nonsense. Just real people who actually care,
