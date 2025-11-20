@@ -1,26 +1,33 @@
-import React from "react";
-
 function AboutWhatWeDo() {
   return (
-    <section className="bg-[#F6F8ED] h-screen md:h-screen">
-      <div className="flex flex-col-reverse md:flex-row-reverse justify-between md:justify-around relative md:top-46 top-10">
-        <div className="pl-5 md:pl-30 pt-10 md:pt-20 w-full md:w-[50%]">
-          <h1 className="text-2xl md:text-3xl font-bold">What We Do</h1>
+    <section className="bg-[#F6F8ED] py-20 md:py-28">
+      <div className="container mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+        {/* LEFT IMAGE */}
+        <div className="flex justify-center md:justify-start">
+          <img
+            src="/images/about-pic-2.avif"
+            alt="What we do"
+            className="h-[350px] md:h-[480px] rounded-xl shadow-md object-cover"
+          />
+        </div>
 
-          <p className="w-full md:w-[70%] mt-5 text-sm md:text-base">
+        {/* RIGHT TEXT */}
+        <div>
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+            What We Do
+          </h1>
+          <div className="w-20 h-[3px] bg-black mt-3 mb-6"></div>
+
+          <p className="text-base md:text-lg leading-relaxed text-gray-700 md:w-[85%]">
             Our mission is simple: help businesses grow with clean design,
             strong branding, and smooth digital experiences. From logos to
             full-fledged websites and apps, we build things that look good and
-            work even better. We keep it modern, minimal, and meaningful.
+            work even better.
+            <br />
+            <br />
+            We keep it modern, minimal, and meaningful — no clutter, no
+            guesswork, just straight-up good design with purpose.
           </p>
-        </div>
-
-        <div className="p-5 md:p-10 relative top-0 md:top-[-100px] w-full md:w-[32%] flex md:block justify-center">
-          <img
-            src="/images/about-pic-2.avif"
-            alt=""
-            className="h-[280px] sm:h-[350px] md:h-[486px]  md:rounded-r-2xl object-cover w-full md:w-auto"
-          />
         </div>
       </div>
     </section>

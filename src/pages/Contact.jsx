@@ -6,7 +6,7 @@ function Contact() {
   return (
     <div>
       <ContactHeroSection />
-      {/* <ContactDirectSection /> */}
+      <ContactDirectSection />
       <ContactMap />
     </div>
   );

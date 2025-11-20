@@ -1,26 +1,32 @@
-import React from "react";
-
-function AboutWhyWeExits() {
+function AboutWhyWeExist() {
   return (
-    <section className="h-screen md:h-screen">
-      <div className="flex flex-col-reverse md:flex-row justify-between md:justify-around relative md:top-46 top-10">
-        <div className="pl-5 md:pl-30 pt-10 md:pt-20 w-full md:w-[50%]">
-          <h1 className="text-2xl md:text-3xl font-bold">Why We Exist</h1>
+    <section className="bg-white py-20 md:py-28">
+      <div className="container mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+        {/* LEFT TEXT */}
+        <div>
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+            Why We Exist
+          </h1>
+          <div className="w-20 h-[3px] bg-black mt-3 mb-6"></div>
 
-          <p className="w-full md:w-[70%] mt-5 text-sm md:text-base">
+          <p className="text-base md:text-lg leading-relaxed text-gray-700 md:w-[85%]">
             We’re here because we genuinely love building things — designs that
             speak, brands that stand out, and digital products that feel
             effortless. Creativity isn’t just our work; it’s our escape, our
-            vibe, our obsession. We exist to turn your vision into something
-            people remember.
+            vibe, our obsession.
+            <br />
+            <br />
+            We exist to turn your vision into something unforgettable —
+            something that feels alive, honest, and uniquely yours.
           </p>
         </div>
 
-        <div className="p-5 md:p-10 relative top-0 md:top-[-100px] w-full md:w-[32%] flex md:block justify-center">
+        {/* RIGHT IMAGE */}
+        <div className="flex justify-center md:justify-end">
           <img
             src="/images/about-pic-3.avif"
-            alt=""
-            className="h-[280px] sm:h-[350px] md:h-[486px]  md:rounded-l-2xl object-cover w-full md:w-auto"
+            alt="Why we exist"
+            className="h-[350px] md:h-[480px] rounded-xl shadow-md object-cover"
           />
         </div>
       </div>
@@ -28,4 +34,4 @@ function AboutWhyWeExits() {
   );
 }
 
-export default AboutWhyWeExits;
+export default AboutWhyWeExist;
