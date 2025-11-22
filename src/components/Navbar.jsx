@@ -9,13 +9,15 @@ function Navbar() {
   return (
     <nav className="absolute top-6 left-1/2 -translate-x-1/2 w-[90%] flex justify-between items-center bg-[#F5F9EE]/70 backdrop-blur-md p-4 rounded-xl z-50">
       {/* Logo */}
-      <div>
-        <img
-          src="/images/logo (2).png"
-          alt="Logo"
-          className="h-10 w-10 object-cover"
-        />
-      </div>
+      <Link to="/app/home">
+        <div>
+          <img
+            src="/images/logo (2).png"
+            alt="Logo"
+            className="h-10 w-10 object-cover"
+          />
+        </div>
+      </Link>
 
       {/* Desktop Links */}
       <ul className="hidden md:flex gap-9">

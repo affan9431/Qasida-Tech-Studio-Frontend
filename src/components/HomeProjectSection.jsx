@@ -1,24 +1,26 @@
+import { Link } from "react-router-dom";
+
 const projectData = [
   {
     id: 1,
+    image: "/images/project-change.png",
+    title: "Starbucks Landing Page Redesign",
+    description:
+      "A modern, intuitive redesign enhancing clarity, product discovery, and user experience while staying true to the iconic brand identity.",
+  },
+  {
+    id: 2,
     image: "/images/project-1.jpg",
     title: "Fruit Fusion Beverage Poster",
     description:
       "A vibrant visual crafted to highlight freshness, energy, and bold flavor tones.",
   },
   {
-    id: 2,
+    id: 3,
     image: "/images/project-2.jpg",
     title: "Premium Haircare Product Artwork",
     description:
       "A sleek, modern product ad with a clean beauty aesthetic and soft lighting.",
-  },
-  {
-    id: 3,
-    image: "/images/project-3.jpg",
-    title: "Minimalist Logo Concept",
-    description:
-      "A distinct identity mark grounded in balance, clarity, and timeless simplicity.",
   },
 ];
 
@@ -62,6 +64,13 @@ function HomeProjectSection() {
               <p className="text-gray-500 text-sm mt-2">{item.description}</p>
 
               {/* Button */}
+              {item.title === "Starbucks Landing Page Redesign" && (
+                <Link to={`/app/projects/${item.id}`}>
+                  <button className=" py-3 text-[#076D5D] font-semibold rounded-lg cursor-pointer transition-all duration-300 ">
+                    View Details &rarr;
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         ))}
