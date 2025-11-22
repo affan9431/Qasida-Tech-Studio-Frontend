@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import "./locomotiveScroll.css";
 import { Toaster } from "react-hot-toast";
 import ProjectDetails from "./pages/ProjectDetails";
+import Review from "./pages/Review";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="review" element={<Review />} />
             <Route path="projects/:projectId" element={<ProjectDetails />} />
           </Route>
           <Route path="*" element={<Navigate replace to="/app/home" />} />
