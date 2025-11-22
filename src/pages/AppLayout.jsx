@@ -1,35 +1,63 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LocomotiveScroll from "locomotive-scroll";
 
 function AppLayout() {
-  const scrollRef = React.createRef();
+  const scrollRef = useRef(null);
   const location = useLocation();
+  const scrollInstance = useRef(null);
 
+  // Initialize LocomotiveScroll after images are loaded
   useEffect(() => {
-    const scroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      lerp: 0.25,
+    const scrollEl = scrollRef.current;
+
+    const initScroll = () => {
+      if (!scrollEl) return;
+      scrollInstance.current = new LocomotiveScroll({
+        el: scrollEl,
+        smooth: true,
+        lerp: 0.25,
+      });
+    };
+
+    // Wait for all images to load
+    const images = scrollEl.querySelectorAll("img");
+    let loadedImages = 0;
+
+    images.forEach((img) => {
+      if (img.complete) {
+        loadedImages++;
+      } else {
+        img.addEventListener("load", () => {
+          loadedImages++;
+          if (loadedImages === images.length) initScroll();
+        });
+        img.addEventListener("error", () => {
+          loadedImages++;
+          if (loadedImages === images.length) initScroll();
+        });
+      }
     });
 
-    return () => {
-      scroll.destroy();
-    };
-  });
+    if (images.length === loadedImages) initScroll();
 
+    return () => {
+      scrollInstance.current?.destroy();
+    };
+  }, []);
+
+  // Update LocomotiveScroll on route change
   useEffect(() => {
-    if (scrollRef.current?._loco) {
-      scrollRef.current._loco.update();
-    }
-  }, [location, scrollRef]);
+    scrollInstance.current?.update();
+  }, [location]);
 
   return (
     <div
-      className="min-h-screen flex flex-col scroll-container"
+      className="scroll-container"
       ref={scrollRef}
+      style={{ overflow: "hidden" }}
     >
       {/* Header */}
       <header className="w-full">
@@ -37,7 +65,7 @@ function AppLayout() {
       </header>
 
       {/* Main content */}
-      <main className="flex-1">
+      <main>
         <Outlet />
       </main>
 
