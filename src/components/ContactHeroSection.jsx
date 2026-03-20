@@ -1,5 +1,5 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 import toast from "react-hot-toast";
 
 function ContactHeroSection() {
@@ -27,8 +27,8 @@ function ContactHeroSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await axios.post(
-      "https://qasida-tech-studio-backend.onrender.com/api/contact",
-      formData
+      "https://qasida-tech-studio-backend.vercel.app/api/contact",
+      formData,
     );
     if (res.status === 201) {
       toast.success("Thanks! Your message has been sent successfully.");
