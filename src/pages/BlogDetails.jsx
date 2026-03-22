@@ -4,18 +4,21 @@ import { useParams } from "react-router-dom";
 const blogData = {
   "mern-chat-app": {
     title: "How to Build a MERN Chat App",
-    content:
-      "In this guide, we will build a real-time chat app using MongoDB, Express, React, and Node.js with Socket.io...",
-  },
-  "ui-ux-design-tips": {
-    title: "Top UI/UX Design Tips for Beginners",
-    content:
-      "UI/UX design is all about creating user-friendly interfaces. Here are the top tips...",
-  },
-  "web-development-trends-2026": {
-    title: "Best Web Development Trends in 2026",
-    content:
-      "Web development is evolving fast. Let’s explore the latest trends like AI integration, Web3, and more...",
+    image: "/images/blog1.jpg",
+    content: [
+      {
+        heading: "Introduction",
+        text: "Building a real-time chat app is one of the best projects to learn full-stack development...",
+      },
+      {
+        heading: "Tech Stack",
+        text: "We will use MongoDB, Express, React, Node.js and Socket.io...",
+      },
+      {
+        heading: "Steps to Build",
+        text: "1. Setup backend\n2. Setup frontend\n3. Integrate socket\n4. Deploy",
+      },
+    ],
   },
 };
 
@@ -28,19 +31,37 @@ function BlogDetails() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F6F8ED] p-8 md:p-16">
+    <div className="min-h-screen bg-[#F6F8ED] pt-28 p-8 md:p-16">
       <Helmet>
         <title>{blog.title} | Qasida Tech Studio</title>
-        <meta name="description" content={blog.content.slice(0, 120)} />
-        <link
-          rel="canonical"
-          href={`https://qasidatechstudio.com/blog/${slug}`}
-        />
+        <meta name="description" content={blog.title} />
       </Helmet>
 
-      <h1 className="text-4xl font-bold mb-6">{blog.title}</h1>
+      {/* Hero Image */}
+      <div className="mb-10">
+        <img
+          src={blog.image}
+          alt={blog.title}
+          className="w-full h-[300px] md:h-[400px] object-cover rounded-2xl"
+        />
+      </div>
 
-      <p className="text-gray-700 leading-7">{blog.content}</p>
+      {/* Title */}
+      <h1 className="text-3xl md:text-5xl font-bold mb-6">{blog.title}</h1>
+
+      {/* Content Sections */}
+      <div className="space-y-8 max-w-3xl">
+        {blog.content.map((section, index) => (
+          <div key={index}>
+            <h2 className="text-xl md:text-2xl font-semibold mb-2">
+              {section.heading}
+            </h2>
+            <p className="text-gray-700 leading-7 whitespace-pre-line">
+              {section.text}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
