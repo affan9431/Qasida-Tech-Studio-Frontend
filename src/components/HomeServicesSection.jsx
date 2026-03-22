@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const servicesData = [
   {
@@ -49,56 +49,74 @@ function HomeServicesSection() {
         </p>
       </div>
 
-      {/* 1st row (2 items) */}
+      {/* 1st row */}
       <div className="flex flex-wrap gap-10 pl-4 md:pl-[190px] justify-center">
         {servicesData.slice(0, 2).map((item, index) => (
-          <div
+          <Link
             key={item.id}
-            className={`w-[300px] sm:w-[340px] h-[247px] bg-[#E4F9A0] rounded-tl-[140px] rounded-br-[140px] p-4 mb-10 ${
-              index === 1 ? "relative bottom-[50px]" : ""
-            }`}
+            to={`/services/${item.title.toLowerCase().replace(/\s+/g, "-")}`}
           >
-            <h1 className="pl-[50px] pt-5 text-[23px] font-bold">
-              {item.title}
-            </h1>
-            <p className="pl-[50px] pt-[15px] text-left">{item.description}</p>
-          </div>
+            <div
+              className={`w-[300px] sm:w-[340px] h-[247px] bg-[#E4F9A0] rounded-tl-[140px] rounded-br-[140px] p-4 mb-10 cursor-pointer hover:scale-105 transition ${
+                index === 1 ? "relative bottom-[50px]" : ""
+              }`}
+            >
+              <h1 className="pl-[50px] pt-5 text-[23px] font-bold">
+                {item.title}
+              </h1>
+              <p className="pl-[50px] pt-[15px] text-left">
+                {item.description}
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
 
-      {/* 2nd row (3 items) */}
+      {/* 2nd row */}
       <div className="flex flex-wrap gap-10 mt-10 pl-4 md:pl-[190px] justify-center">
         {servicesData.slice(2, 5).map((item, index) => (
-          <div
+          <Link
             key={item.id}
-            className={`w-[300px] sm:w-[340px] h-[247px] bg-[#E4F9A0] rounded-tl-[140px] rounded-br-[140px] p-4 mb-10 ${
-              index === 1 ? "relative bottom-[50px] md:left-[-70px]" : ""
-            } ${index === 2 ? "relative bottom-[100px] md:left-[-70px]" : ""} ${
-              index === 0 ? "relative md:left-[-60px]" : ""
-            }`}
+            to={`/services/${item.title.toLowerCase().replace(/\s+/g, "-")}`}
           >
-            <h1 className="pl-[50px] pt-5 text-[23px] font-bold">
-              {item.title}
-            </h1>
-            <p className="pl-[50px] pt-[15px] text-left">{item.description}</p>
-          </div>
+            <div
+              className={`w-[300px] sm:w-[340px] h-[247px] bg-[#E4F9A0] rounded-tl-[140px] rounded-br-[140px] p-4 mb-10 cursor-pointer hover:scale-105 transition ${
+                index === 1 ? "relative bottom-[50px] md:left-[-70px]" : ""
+              } ${index === 2 ? "relative bottom-[100px] md:left-[-70px]" : ""} ${
+                index === 0 ? "relative md:left-[-60px]" : ""
+              }`}
+            >
+              <h1 className="pl-[50px] pt-5 text-[23px] font-bold">
+                {item.title}
+              </h1>
+              <p className="pl-[50px] pt-[15px] text-left">
+                {item.description}
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
 
-      {/* 3rd row (1 item) */}
+      {/* 3rd row */}
       <div className="flex flex-wrap gap-10 mt-10 pl-4 md:pl-[190px] justify-center">
         {servicesData.slice(5, 6).map((item, index) => (
-          <div
+          <Link
             key={item.id}
-            className={`w-[300px] sm:w-[340px] h-[247px] bg-[#E4F9A0] rounded-tl-[140px] rounded-br-[140px] p-4 ${
-              index === 0 ? "relative bottom-[50px]" : ""
-            }`}
+            to={`/services/${item.title.toLowerCase().replace(/\s+/g, "-")}`}
           >
-            <h1 className="pl-[50px] pt-5 text-[23px] font-bold">
-              {item.title}
-            </h1>
-            <p className="pl-[50px] pt-[15px] text-left">{item.description}</p>
-          </div>
+            <div
+              className={`w-[300px] sm:w-[340px] h-[247px] bg-[#E4F9A0] rounded-tl-[140px] rounded-br-[140px] p-4 cursor-pointer hover:scale-105 transition ${
+                index === 0 ? "relative bottom-[50px]" : ""
+              }`}
+            >
+              <h1 className="pl-[50px] pt-5 text-[23px] font-bold">
+                {item.title}
+              </h1>
+              <p className="pl-[50px] pt-[15px] text-left">
+                {item.description}
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
     </section>

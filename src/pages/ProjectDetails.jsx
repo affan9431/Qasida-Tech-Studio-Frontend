@@ -1,15 +1,16 @@
-import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { projects } from "../data/projects";
 import {
   ArrowRight,
+  Coffee,
   Eye,
   Layout,
-  Coffee,
-  Zap,
   Palette,
   Target,
+  Zap,
 } from "lucide-react";
+import { useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { Link, useParams } from "react-router-dom";
+import { projects } from "../data/projects";
 
 // Map icon strings to components
 const iconMap = { Eye, Layout, Coffee, Zap, Palette, Target };
@@ -24,6 +25,35 @@ export default function ProjectDetails() {
 
   return (
     <div className="bg-background text-foreground">
+      <Helmet>
+        <title>
+          {project.title} | Web Development Case Study | Qasida Tech Studio
+        </title>
+
+        <meta name="description" content={project.description} />
+
+        <meta
+          name="keywords"
+          content={`${project.title}, web development project, UI UX case study, MERN project`}
+        />
+
+        <link
+          rel="canonical"
+          href={`https://qasidatechstudio.com/app/projects/${project.id}`}
+        />
+
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:title"
+          content={`${project.title} | Qasida Tech Studio`}
+        />
+        <meta property="og:description" content={project.description} />
+        <meta
+          property="og:url"
+          content={`https://qasidatechstudio.com/app/projects/${project.id}`}
+        />
+        <meta property="og:image" content={project.image} />
+      </Helmet>
       {/* Before & After */}
       <section className="max-w-6xl mx-auto px-6 py-16 md:py-24 border-t border-border">
         <h2 className="text-3xl font-bold mb-12">Before & After</h2>
@@ -195,8 +225,8 @@ export default function ProjectDetails() {
                       key === "headings"
                         ? "text-2xl font-bold"
                         : key === "body"
-                        ? "text-base text-muted-foreground"
-                        : "text-sm text-muted-foreground"
+                          ? "text-base text-muted-foreground"
+                          : "text-sm text-muted-foreground"
                     }`}
                   >
                     {project.typography[key]}

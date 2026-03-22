@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 export default function Review() {
   const [rating, setRating] = useState(0);
@@ -13,6 +14,39 @@ export default function Review() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground px-6 py-16">
+      <Helmet>
+        <title>Client Reviews | Qasida Tech Studio Web & Design Services</title>
+
+        <meta
+          name="description"
+          content="Read client reviews and testimonials for Qasida Tech Studio's web development, UI/UX design, and branding services."
+        />
+
+        <meta
+          name="keywords"
+          content="qasida tech studio reviews, web development testimonials, UI UX client feedback, agency reviews India"
+        />
+
+        <link rel="canonical" href="https://qasidatechstudio.com/app/review" />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Client Reviews | Qasida Tech Studio"
+        />
+        <meta
+          property="og:description"
+          content="See what our clients say about our design and development services."
+        />
+        <meta
+          property="og:url"
+          content="https://qasidatechstudio.com/app/review"
+        />
+        <meta
+          property="og:image"
+          content="https://qasidatechstudio.com/images/logo (2).png"
+        />
+      </Helmet>
       <h1 className="text-3xl font-bold mb-4">We Value Your Feedback!</h1>
       {submitted ? (
         <p className="text-green-500 text-lg">Thanks for your review! 🙏</p>
