@@ -21,7 +21,7 @@ const servicesData = [
   },
   {
     id: 4,
-    title: "UI/UX",
+    title: "UI UX",
     description:
       "Intuitive and modern user interfaces for websites and apps that enhance user experience.",
   },

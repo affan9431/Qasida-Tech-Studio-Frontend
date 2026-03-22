@@ -7,7 +7,7 @@ const blogData = [
     slug: "mern-chat-app",
     description:
       "Step-by-step guide to build a real-time chat app using MERN stack and Socket.io.",
-    image: "/images/blog1.jpg",
+    image: "/images/blog1.png",
     date: "March 2026",
     category: "Development",
   },
@@ -33,7 +33,7 @@ const blogData = [
 
 function Blog() {
   return (
-    <div className="min-h-screen bg-[#F6F8ED] pt-28 p-8 md:p-16">
+    <div className="min-h-screen bg-[#F6F8ED] px-10 py-20 md:py-28">
       {" "}
       <Helmet>
         <title>
