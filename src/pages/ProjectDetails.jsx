@@ -27,7 +27,7 @@ export default function ProjectDetails() {
     <div className="bg-background text-foreground">
       <Helmet>
         <title>
-          {project.title} | Web Development Case Study | Qasida Tech Studio
+          {project.name} | Web Development Case Study | Qasida Tech Studio
         </title>
 
         <meta name="description" content={project.description} />

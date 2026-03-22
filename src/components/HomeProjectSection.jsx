@@ -22,6 +22,13 @@ const projectData = [
     description:
       "A sleek, modern product ad with a clean beauty aesthetic and soft lighting.",
   },
+  {
+    id: 4,
+    image: "/images/project-3.png",
+    title: "TripWise – Smart Travel Planning Made Simple",
+    description:
+      "A smart travel planner app that helps users organize trips, discover destinations, and manage itineraries effortlessly.",
+  },
 ];
 
 function HomeProjectSection() {
@@ -64,10 +71,16 @@ function HomeProjectSection() {
               <p className="text-gray-500 text-sm mt-2">{item.description}</p>
 
               {/* Button */}
-              {item.title === "Starbucks Landing Page Redesign" && (
-                <Link to={`/app/projects/${item.id}`}>
+              {item.title === "Starbucks Landing Page Redesign" ? (
+                <Link to={`/projects/${item.id}`}>
                   <button className=" py-3 text-[#076D5D] font-semibold rounded-lg cursor-pointer transition-all duration-300 ">
                     View Details &rarr;
+                  </button>
+                </Link>
+              ) : (
+                <Link to={`https://tripwise-planner.netlify.app/app/home`}>
+                  <button className=" py-3 text-[#076D5D] font-semibold rounded-lg cursor-pointer transition-all duration-300 ">
+                    View Site &rarr;
                   </button>
                 </Link>
               )}
