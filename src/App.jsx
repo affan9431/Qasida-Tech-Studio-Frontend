@@ -13,6 +13,7 @@ import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
 import NotFound from "./pages/NotFound";
 import ServiceDetails from "./pages/ServiceDetails";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="review" element={<Review />} />
             <Route path="services/:serviceId" element={<ServiceDetails />} />
             <Route path="blog" element={<Blog />} />
+            <Route path="portfolio" element={<Portfolio />} />
             <Route path="blog/:slug" element={<BlogDetails />} />
 
             {/* Dynamic Project Page */}
